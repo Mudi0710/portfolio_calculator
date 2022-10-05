@@ -6,7 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./CSS/all.css">
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <title>Just Calculator</title>
   <style>
     /* 鎖住反白 */
@@ -15,8 +17,25 @@
       -moz-user-select: none;
       -o-user-select: none;
       user-select: none;
-      background: url('./images/background.jpg') fixed no-repeat center center/cover;
       font-family: 'Work Sans', sans-serif;
+      overflow: hidden;
+    }
+
+    .photo {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      filter: brightness(110%);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 100% 0%
     }
 
     /* 設定 計算機 外觀樣式 */
@@ -32,7 +51,8 @@
       background: rgb(255, 255, 255);
       border-radius: 10px;
       box-shadow:
-        3px 3px 7px rgba(0, 0, 0, 0.8);
+        5px 5px 5px rgba(0, 0, 0, 0.4),
+        -1px -1px 1px rgba(236, 236, 243, .5);
     }
 
     /* 改變 按鈕區 滑鼠游標圖示 */
@@ -95,7 +115,7 @@
       background: rgb(255, 255, 255);
       color: rgb(105, 105, 105);
       box-shadow:
-        1px 1px 2px rgba(0, 0, 0, .4),
+        3px 3px 3px rgba(0, 0, 0, .4),
         -1px -1px 4px rgba(236, 236, 243, .9),
         inset 0 0 0 rgba(236, 236, 243, .9),
         inset 0 0 0 rgba(0, 0, 0, .4);
@@ -132,6 +152,9 @@
 </head>
 
 <body>
+  <div class="photo">
+    <img src="./images/background.jpg">
+  </div>
   <table>
     <tr>
       <td id="math" colspan="4"></td>
@@ -409,7 +432,7 @@
         equals.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
       }
       /*
         按下 ESC 或 Delete 鍵
@@ -425,7 +448,7 @@
         escape.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
       }
       /*
         按下 退位 鍵
@@ -440,7 +463,7 @@
         backspace.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
       }
       /*
         按下 數字 鍵
@@ -460,7 +483,7 @@
         one.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
         if (input.innerText.includes('=')) {
           math.innerText = event.key
           input.innerText = event.key
@@ -479,7 +502,7 @@
         two.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
         if (input.innerText.includes('=')) {
           math.innerText = event.key
           input.innerText = event.key
@@ -498,7 +521,7 @@
         three.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
         if (input.innerText.includes('=')) {
           math.innerText = event.key
           input.innerText = event.key
@@ -517,7 +540,7 @@
         four.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
         if (input.innerText.includes('=')) {
           math.innerText = event.key
           input.innerText = event.key
@@ -536,7 +559,7 @@
         five.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
         if (input.innerText.includes('=')) {
           math.innerText = event.key
           input.innerText = event.key
@@ -555,7 +578,7 @@
         six.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
         if (input.innerText.includes('=')) {
           math.innerText = event.key
           input.innerText = event.key
@@ -574,7 +597,7 @@
         seven.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
         if (input.innerText.includes('=')) {
           math.innerText = event.key
           input.innerText = event.key
@@ -593,7 +616,7 @@
         eight.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
         if (input.innerText.includes('=')) {
           math.innerText = event.key
           input.innerText = event.key
@@ -612,7 +635,7 @@
         nine.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
         if (input.innerText.includes('=')) {
           math.innerText = event.key
           input.innerText = event.key
@@ -631,7 +654,7 @@
         zero.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
         if (input.innerText.includes('=')) {
           math.innerText = event.key
           input.innerText = event.key
@@ -663,7 +686,7 @@
         dot.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
         if (input.innerText.includes('=')) {
           math.innerText = '0.'
           input.innerText = '0.'
@@ -696,7 +719,7 @@
         plus.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
         if (input.innerText.includes('=')) {
           input.innerText = input.innerText.substr(0, input.innerText.length - 1)
           input.innerText = answer.innerText
@@ -716,7 +739,7 @@
         minus.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
         if (input.innerText.includes('=')) {
           input.innerText = input.innerText.substr(0, input.innerText.length - 1)
           input.innerText = answer.innerText
@@ -736,7 +759,7 @@
         multiply.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
         if (input.innerText.includes('=')) {
           input.innerText = input.innerText.substr(0, input.innerText.length - 1)
           input.innerText = answer.innerText
@@ -756,7 +779,7 @@
         divide.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0.4),
         0px 0px 0px rgba(236, 236, 243, 0.9),
         inset -1px -1px 4px rgba(236, 236, 243, 0.9),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4)`
+        inset 3px 3px 3px rgba(0, 0, 0, 0.4)`
         if (input.innerText.includes('=')) {
           input.innerText = input.innerText.substr(0, input.innerText.length - 1)
           input.innerText = answer.innerText
@@ -776,125 +799,125 @@
     document.onkeyup = () => {
       if (event.key === 'Enter') {
         equals.style.background = 'rgb(255, 255, 255)'
-        equals.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        equals.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)` }
       else if (event.key === 'Escape' || event.key === 'Delete') {
         escape.style.background = 'rgb(255, 255, 255)'
-        escape.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        escape.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === 'Backspace') {
         backspace.style.background = 'rgb(255, 255, 255)'
-        backspace.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        backspace.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === '1') {
         one.style.background = 'rgb(255, 255, 255)'
-        one.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        one.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === '2') {
         two.style.background = 'rgb(255, 255, 255)'
-        two.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        two.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === '3') {
         three.style.background = 'rgb(255, 255, 255)'
-        three.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        three.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === '4') {
         four.style.background = 'rgb(255, 255, 255)'
-        four.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        four.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === '5') {
         five.style.background = 'rgb(255, 255, 255)'
-        five.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        five.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === '6') {
         six.style.background = 'rgb(255, 255, 255)'
-        six.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        six.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === '7') {
         seven.style.background = 'rgb(255, 255, 255)'
-        seven.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        seven.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === '8') {
         eight.style.background = 'rgb(255, 255, 255)'
-        eight.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        eight.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === '9') {
         nine.style.background = 'rgb(255, 255, 255)'
-        nine.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        nine.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === '0') {
         zero.style.background = 'rgb(255, 255, 255)'
-        zero.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        zero.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === '.') {
         dot.style.background = 'rgb(255, 255, 255)'
-        dot.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        dot.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === '+') {
         plus.style.background = 'rgb(255, 255, 255)'
-        plus.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        plus.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === '-') {
         minus.style.background = 'rgb(255, 255, 255)'
-        minus.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        minus.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === '*') {
         multiply.style.background = 'rgb(255, 255, 255)'
-        multiply.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        multiply.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
       }
       else if (event.key === '/') {
         divide.style.background = 'rgb(255, 255, 255)'
-        divide.style.boxShadow = `1px 1px 2px rgba(0, 0, 0, 0.4),
+        divide.style.boxShadow = `3px 3px 3px rgba(0, 0, 0, 0.4),
         -1px -1px 4px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(236, 236, 243, 0.9),
         inset 0px 0px 0px rgba(0, 0, 0, 0.4)`
